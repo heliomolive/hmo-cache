@@ -8,6 +8,10 @@ group = 'hmo.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+ext {
+	ehcacheVersion = '3.8.1'
+}
+
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
@@ -20,6 +24,9 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-cache'
+	implementation 'javax.cache:cache-api'
+	implementation "org.ehcache:ehcache:${ehcacheVersion}"
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {

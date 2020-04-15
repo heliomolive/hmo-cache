@@ -1,4 +1,4 @@
-package hmo.example.hmocache;
+package hmo.cache;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HmoCacheApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HmoCacheApplication.class, args);
+		try {
+			SpringApplication.run(HmoCacheApplication.class, args);
+		} catch (Throwable t) {
+			new Exception(t).printStackTrace();
+		}
 	}
 
 }
